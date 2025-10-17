@@ -37,6 +37,7 @@ class SetOrderFieldsRequest implements RequestInterface
     private ?bool $wantInvoice;
     private ?string $extraField1;
     private ?string $extraField2;
+    private ?array $customExtraFields;
     private ?int $pickState;
     private ?int $packState;
 
@@ -52,7 +53,7 @@ class SetOrderFieldsRequest implements RequestInterface
         ?string $deliveryMethod = null,
         ?float $deliveryPrice = null,
         ?string $deliveryFullname = null,
-        ?string $deliveryCompany,
+        ?string $deliveryCompany = null,
         ?string $deliveryAddress = null,
         ?string $deliveryPostcode = null,
         ?string $deliveryCity = null,
@@ -72,6 +73,7 @@ class SetOrderFieldsRequest implements RequestInterface
         ?bool $wantInvoice = null,
         ?string $extraField1 = null,
         ?string $extraField2 = null,
+        ?array $customExtraFields = null,
         ?int $pickState = null,
         ?int $packState = null
     ) {
@@ -106,6 +108,7 @@ class SetOrderFieldsRequest implements RequestInterface
         $this->wantInvoice = $wantInvoice;
         $this->extraField1 = $extraField1;
         $this->extraField2 = $extraField2;
+        $this->customExtraFields = $customExtraFields;
         $this->pickState = $pickState;
         $this->packState = $packState;
     }
@@ -144,6 +147,7 @@ class SetOrderFieldsRequest implements RequestInterface
             'want_invoice' => $this->wantInvoice,
             'extra_field_1' => $this->extraField1,
             'extra_field_2' => $this->extraField2,
+            'custom_extra_fields' => $this->customExtraFields,
             'pick_state' => $this->pickState,
             'pack_state' => $this->packState,
         ];
