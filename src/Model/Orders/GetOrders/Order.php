@@ -106,7 +106,7 @@ class Order
     private string $extraField2;
 
     /**
-     * @var CustomExtraField[]
+     * @var OrderCustomExtraField[]
      */
     private array $customExtraFields = [];
     /**
@@ -158,7 +158,7 @@ class Order
      * @param bool $wantInvoice
      * @param string $extraField1
      * @param string $extraField2
-     * @param CustomExtraField[] $customExtraFields
+     * @param OrderCustomExtraField[] $customExtraFields
      * @param string $orderPage
      * @param int $pickState
      * @param int $packState
@@ -468,7 +468,7 @@ class Order
     }
 
     /**
-     * @return CustomExtraField[]
+     * @return OrderCustomExtraField[]
      */
     public function getCustomExtraFields(): array
     {
