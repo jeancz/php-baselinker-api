@@ -16,6 +16,7 @@ use Imper86\PhpBaselinkerApi\Model\Orders\GetJournalList\GetJournalListRequest;
 use Imper86\PhpBaselinkerApi\Model\Orders\GetJournalList\GetJournalListResponse;
 use Imper86\PhpBaselinkerApi\Model\Orders\GetNewReceipts\GetNewReceiptsRequest;
 use Imper86\PhpBaselinkerApi\Model\Orders\GetNewReceipts\GetNewReceiptsResponse;
+use Imper86\PhpBaselinkerApi\Model\Orders\GetOrderExtraFields\GetOrderExtraFieldsResponse;
 use Imper86\PhpBaselinkerApi\Model\Orders\GetOrderPaymentsHistory\GetOrderPaymentsHistoryRequest;
 use Imper86\PhpBaselinkerApi\Model\Orders\GetOrderPaymentsHistory\GetOrderPaymentsHistoryResponse;
 use Imper86\PhpBaselinkerApi\Model\Orders\GetOrders\GetOrdersRequest;
@@ -56,6 +57,11 @@ class Orders extends AbstractResource
     public function getOrdersByPhone(GetOrdersByPhoneRequest $request): GetOrdersByPhoneResponse
     {
         return new GetOrdersByPhoneResponse($this->sendRequest(__FUNCTION__, $request->toArray()));
+    }
+
+    public function getOrderExtraFields(): GetOrderExtraFieldsResponse
+    {
+        return new GetOrderExtraFieldsResponse($this->sendRequest(__FUNCTION__));
     }
 
     public function addInvoice(AddInvoiceRequest $request): AddInvoiceResponse
