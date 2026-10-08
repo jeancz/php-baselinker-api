@@ -17,7 +17,7 @@ class OrderProduct
     private string $auctionId;
     private string $attributes;
     private float $priceBrutto;
-    private int $taxRate;
+    private float $taxRate;
     private int $quantity;
     private float $weight;
     private int $bundleId;
@@ -36,7 +36,7 @@ class OrderProduct
         string $auctionId,
         string $attributes,
         float $priceBrutto,
-        int $taxRate,
+        float $taxRate,
         int $quantity,
         float $weight,
         int $bundleId
@@ -202,7 +202,7 @@ class OrderProduct
     /**
      * @return int
      */
-    public function getTaxRate(): int
+    public function getTaxRate(): float
     {
         return $this->taxRate;
     }
